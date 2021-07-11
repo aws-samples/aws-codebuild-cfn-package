@@ -1,0 +1,2 @@
+# Package CloudFormation templates
+
