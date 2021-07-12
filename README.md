@@ -1,7 +1,7 @@
 # Package CloudFormation templates
-This solution provides a framework and working code to handle packaging and upload of the [CloudFormation](https://aws.amazon.com/cloudformation) templates to an [Amazon Simple Storage System](https://aws.amazon.com/s3) (Amazon S3) bucket before deployment. This is useful when you have a complex deployment with multiple nested CloudFormation templates. The benefits of this [CodeBuild](https://aws.amazon.com/codebuild/)-based approach:
+This solution provides a framework and working sample code to handle packaging and upload of [AWS CloudFormation](https://aws.amazon.com/cloudformation) templates to an [Amazon Simple Storage System](https://aws.amazon.com/s3) (Amazon S3) bucket before deployment. This is useful when you have a complex deployment with multiple nested CloudFormation templates. The benefits of this [AWS CodeBuild](https://aws.amazon.com/codebuild/)-based approach:
 
-- You deliver only the source code "as is", no pre-packaged CloudFormation templates in an S3 bucket
+- You deliver your solution's source code "as is", without pre-packaged CloudFormation templates
 - Packaging and upload process runs in CodeBuild environment which you can configure and control, rather than on the end-user workstation
 - Decreasing dependency on the end-user environment, operating system, and installed programs
 - You can implement complex workflow for the pre- and post-deployment steps using CodeBuild and [CodePipeline](https://aws.amazon.com/codepipeline)
@@ -106,3 +106,6 @@ Run the `ls` on the S3 bucket to check that all templates are uploaded:
 ```sh
 aws s3 ls s3://${S3_BUCKET_NAME}/${PROJECT_NAME}/ --recursive
 ```
+
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+SPDX-License-Identifier: MIT-0
