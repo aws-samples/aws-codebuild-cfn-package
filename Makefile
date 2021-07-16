@@ -11,6 +11,7 @@ CFN_BUCKET_NAME ?=
 CFN_TEMPLATE_DIR := cfn-templates
 CFN_OUTPUT_DIR := build/$(AWS_DEFAULT_REGION)
 CFN_STACK_NAME ?= 
+PROJECT_NAME := package-cfn
 
 PYTHON := $(shell /usr/bin/which python$(PY_VERSION))
 
@@ -32,5 +33,11 @@ package: build
 
 cfn_nag_scan: 
 	cfn_nag_scan --input-path ./${CFN_TEMPLATE_DIR}
+
+zip:
+	echo "Zipping the source code"
+	rm -f ${PROJECT_NAME}.zip
+	zip -r ${PROJECT_NAME}.zip . -x "*.pdf" -x "*.git*" -x "*.DS_Store*" -x "*.vscode*" -x "/build/*"
+
 
 
