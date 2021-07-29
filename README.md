@@ -4,7 +4,7 @@ This solution provides a framework and working sample code to handle packaging a
 - You deliver your solution's source code "as is", without pre-packaged CloudFormation templates
 - Packaging and upload process runs in CodeBuild environment which you can configure and control, rather than on the end-user workstation
 - Decreasing dependency on the end-user environment, operating system, and installed programs
-- You can implement complex workflow for the pre- and post-deployment steps using CodeBuild and [CodePipeline](https://aws.amazon.com/codepipeline)
+- You can implement complex workflow for the pre- and post-deployment steps using CodeBuild and [AWS CodePipeline](https://aws.amazon.com/codepipeline)
 - Improving end-user experience with error-free and repeatable deployment workflows
 
 This solution offers two options how you can perform this deployment preparation step.
@@ -12,6 +12,8 @@ This solution offers two options how you can perform this deployment preparation
 ## Solution architecture
 
 ![package-cfn-architecture](design/package-cfn-architecture.drawio.svg)
+
+The components are as follows:
 
 1. zip-file with full source code is copied to the S3 deployment bucket 
 2. CodeBuild project

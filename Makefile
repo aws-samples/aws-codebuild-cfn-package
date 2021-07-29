@@ -39,5 +39,7 @@ zip:
 	rm -f ${PROJECT_NAME}.zip
 	zip -r ${PROJECT_NAME}.zip . -x "*.pdf" -x "*.git*" -x "*.DS_Store*" -x "*.vscode*" -x "/build/*"
 
+cfn_nag_scan: 
+	cfn_nag_scan --input-path ./cfn-templates
 
 
